@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string itemName = "Bike";   // The name of the item we're renting out
+    string rentedBy = "";       // Will store the name of the person renting the item
+    bool isAvailable = true;    // Tracks if the item is available
+
+    int choice;                 // User's menu choice
+
+    // Display the menu and handle user choices
+    do {
+        // Display menu options
+        cout << "\nRental Management Menu:\n";
+        cout << "1. Rent Item\n";
+        cout << "2. Return Item\n";
+        cout << "3. Show Status\n";
+        cout << "4. Exit\n";
+        cout << "Choose an option: ";
+        cin >> choice;
+
+        // Handle each choice
+        if (choice == 1) {  // Rent Item
+            if (isAvailable) {
+                cout << "Enter your name: ";
+                cin >> rentedBy;         // Store the renter's name
+                isAvailable = false;     // Mark item as rented
+                cout << itemName << " rented by " << rentedBy << ".\n";
+            } else {
+                cout << itemName << " is currently unavailable.\n";
+            }
+        }
+        else if (choice == 2) {  // Return Item
+            if (!isAvailable) {
+                cout << rentedBy << " has returned " << itemName << ".\n";
+                rentedBy = "";        // Clear the renter's name
+                isAvailable = true;   // Mark item as available again
+            } else {
+                cout << itemName << " is already available.\n";
+            }
+        }
+        else if (choice == 3) {  // Show Status
+            cout << "Item: " << itemName << "\n";
+            cout << "Status: " << (isAvailable ? "Available" : "Rented by " + rentedBy) << "\n";
+        }
+        else if (choice == 4) {  // Exit
+            cout << "Exiting the program.\n";
+        }
+        else {
+            cout << "Invalid choice. Please choose again.\n";
+        }
+
+    } while (choice != 4);  // Loop until the user chooses to exit
+
+    return 0;
+}
