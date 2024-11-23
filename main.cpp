@@ -122,25 +122,4 @@ int main() {
 }
 
 
-loadRentalAgreementsFromFile():
-
-Reads the rental agreements from a file and stores them in memory.
-saveRentalAgreementsToFile():
-
-Saves the current rental agreements back to the file.
-getCurrentDate():
-
-Returns the current date (as a timestamp).
-formatDate(time_t date):
-
-Converts a timestamp into a readable date format.
-displayRentalAgreements():
-
-Shows all the rental agreements with details like the item, who rented it, when it was rented, and how long the rental lasts.
-checkExpiredRentals():
-
-Checks if any of the rentals have exceeded their duration and prints a message for expired ones.
-displayRentalHistory():
-
-Displays a history of all past rentals from the file.
 
