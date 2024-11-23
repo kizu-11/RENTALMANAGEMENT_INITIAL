@@ -1,7 +1,9 @@
 #include "RentalManagement.h"
 
-RentalManagement::RentalManagement() : DATA_FILE("RentalAgreements.txt") {
-    loadRentalAgreementsFromFile();
+
+
+RentalManagement::RentalManagement() : DATA_FILE("RentalAgreements.txt") { // Initializes the system and loads rental agreements from a file.//
+    loadRentalAgreementsFromFile(); //Reads the rental agreements from a file and stores them in memory.//
 }
 
 void RentalManagement::loadRentalAgreementsFromFile() {
@@ -23,7 +25,7 @@ void RentalManagement::loadRentalAgreementsFromFile() {
     }
 }
 
-void RentalManagement::saveRentalAgreementsToFile() {
+void RentalManagement::saveRentalAgreementsToFile() { // Saves the current rental agreements back to the file.//
     ofstream file(DATA_FILE);
     if (file.is_open()) {
         for (const auto& agreement : rentalAgreements) {
@@ -36,17 +38,17 @@ void RentalManagement::saveRentalAgreementsToFile() {
     }
 }
 
-time_t RentalManagement::getCurrentDate() {
+time_t RentalManagement::getCurrentDate() Returns the current date (as a timestamp).
     return time(0);  // Get the current system time
 }
 
-string RentalManagement::formatDate(time_t date) {
+string RentalManagement::formatDate(time_t date) { Converts a timestamp into a readable date format.
     char buffer[20];
     strftime(buffer, sizeof(buffer), "%Y-%m-%d", localtime(&date));
     return string(buffer);
 }
 
-void RentalManagement::displayRentalAgreements() {
+void RentalManagement::displayRentalAgreements() { Shows all the rental agreements with details like the item, who rented it, when it was rented, and how long the rental lasts.
     if (rentalAgreements.empty()) {
         cout << "No rental agreements found.\n";
         return;
@@ -63,7 +65,7 @@ void RentalManagement::displayRentalAgreements() {
     }
 }
 
-void RentalManagement::checkExpiredRentals() {
+void RentalManagement::checkExpiredRentals() { Checks if any of the rentals have exceeded their duration and prints a message for expired ones.
     time_t now = getCurrentDate();
     for (auto& agreement : rentalAgreements) {
         if (now >= agreement.rentDate + agreement.duration * 86400) {
@@ -72,7 +74,7 @@ void RentalManagement::checkExpiredRentals() {
     }
 }
 
-void RentalManagement::displayRentalHistory() {
+void RentalManagement::displayRentalHistory() { // Displays a history of all past rentals from the file.
     ifstream file(DATA_FILE);
     if (file.is_open()) {
         cout << "\nRental History:\n";
@@ -120,3 +122,27 @@ int main() {
 
     return 0;
 }
+
+
+loadRentalAgreementsFromFile():
+
+Reads the rental agreements from a file and stores them in memory.
+saveRentalAgreementsToFile():
+
+Saves the current rental agreements back to the file.
+getCurrentDate():
+
+Returns the current date (as a timestamp).
+formatDate(time_t date):
+
+Converts a timestamp into a readable date format.
+displayRentalAgreements():
+
+Shows all the rental agreements with details like the item, who rented it, when it was rented, and how long the rental lasts.
+checkExpiredRentals():
+
+Checks if any of the rentals have exceeded their duration and prints a message for expired ones.
+displayRentalHistory():
+
+Displays a history of all past rentals from the file.
+
