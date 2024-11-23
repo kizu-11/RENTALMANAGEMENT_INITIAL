@@ -3,10 +3,10 @@
 
 
 RentalManagement::RentalManagement() : DATA_FILE("RentalAgreements.txt") { // Initializes the system and loads rental agreements from a file.//
-    loadRentalAgreementsFromFile(); //Reads the rental agreements from a file and stores them in memory.//
+    loadRentalAgreementsFromFile(); 
 }
 
-void RentalManagement::loadRentalAgreementsFromFile() {
+void RentalManagement::loadRentalAgreementsFromFile() { //Reads the rental agreements from a file and stores them in memory.//
     ifstream file(DATA_FILE);
     if (file.is_open()) {
         string itemName, rentedBy;
