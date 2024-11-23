@@ -1,3 +1,38 @@
 Rental Agreements:
 1. Item: Bike | Rented by: John | Rent Date: 2024-11-01 | Duration: 7 days | Rental Ends: 2024-11-08
 2. Item: Camera | Rented by: Jane | Rent Date: 2024-11-05 | Duration: 3 days | Rental Ends: 2024-11-08
+
+
+Rental Management System:
+1. Display Rental Agreements
+2. Check Expired Rentals
+3. Display Rental History
+4. Exit
+Enter your choice: 2
+
+Rental for item 'Laptop' has expired.
+Rental for item 'Phone' has expired.
+Rental for item 'Tablet' has expired.
+
+
+Rental Management System:
+1. Display Rental Agreements
+2. Check Expired Rentals
+3. Display Rental History
+4. Exit
+Enter your choice: 3
+
+Rental History:
+Laptop
+Alice
+2024-11-01
+10
+Phone
+Bob
+2024-11-05
+5
+Tablet
+Charlie
+2024-10-28
+7
+
