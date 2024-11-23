@@ -1,7 +1,5 @@
 #include "RentalManagement.h"
 
-
-
 RentalManagement::RentalManagement() : DATA_FILE("RentalAgreements.txt") { // Initializes the system and loads rental agreements from a file.//
     loadRentalAgreementsFromFile(); 
 }
